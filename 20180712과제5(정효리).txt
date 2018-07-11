@@ -1,0 +1,58 @@
+db.users.insertMany(
+[
+{ _id: "id1",name: "name1", password: 1234, email: "a@a.com",address_id:["adr1"],picture_id:"pic1",friends_id:["frd1"],pheed_id: ["pheed1"],group_id: "group1"},
+{ _id: "id2",name: "name2", password: 1234, email: "b@a.com",address_id:["adr2"],picture_id:"pic2",friends_id:["frd2"],pheed_id: ["pheed2"],group_id: "group1"},
+{ _id: "id3",name: "name3", password: 1234, email: "c@a.com",address_id:["adr3","adr4","adr5"],picture_id:["pic3"],friends_id:"frd3",pheed_id: ["pheed3"],group_id: "group1"},
+{ _id: "id4",name: "name4", password: 1234, email: "d@a.com",picture_id:"pic4",friends_id:["frd4"],pheed_id: ["pheed4"],group_id: "group1"},
+{ _id: "id5",name: "name5", password: 1234, email: "e@a.com",picture_id:"pic5",friends_id:["frd5","frd6"],pheed_id: ["pheed5","pheed6"],group_id: "group1"}
+]);   
+
+db.address.insertMany(
+[
+{ _id: "adr1",detail: "1", addrName: "busan", 	phone: "010-1111-1111"},
+{ _id: "adr2",detail: "2", addrName: "seoul", 	phone: "010-1111-1111"},
+{ _id: "adr3",detail: "3", addrName: "inchon", 	phone: "010-1111-1111"},
+{ _id: "adr4",detail: "4", addrName: "guengi", 	phone: "010-1111-1111"},
+{ _id: "adr5",detail: "5", addrName: "deagu", 	phone: "010-1111-1111"}
+]);
+
+db.picture.insertMany(
+[
+{ _id: "pic1",urlAddr : "http://1png"},
+{ _id: "pic2",urlAddr : "http://2png"},
+{ _id: "pic3",urlAddr : "http://3png"},
+{ _id: "pic4",urlAddr : "http://4png"},
+{ _id: "pic5",urlAddr : "http://5png"},
+{ _id: "pic6",urlAddr : "http://6png"}
+]);
+
+db.friends.insertMany(
+[
+{ _id: "frd1",kind : "friend"},
+{ _id: "frd2",kind : "family"},
+{ _id: "frd3",kind : "friend"},
+{ _id: "frd4",kind : "colleague"},
+{ _id: "frd5",kind : "family"},
+{ _id: "frd6",kind : "family"}
+]);
+
+db.Pheed.insertMany(
+[
+{ _id: "pheed1",writer: "name1", content: "dog", time: Date(),picture_id:"pic1"},
+{ _id: "pheed2",writer: "name2", content: "cat", time: Date(),picture_id:"pic2"},
+{ _id: "pheed3",writer: "name3", content: "melon", time: Date(),picture_id:"pic3"},
+{ _id: "pheed4",writer: "name4", content: "banana", time: Date(),picture_id:"pic4"},
+{ _id: "pheed5",writer: "name5", content: "apple", time: Date(),picture_id:"pic5"},
+{ _id: "pheed6",writer: "name5", content: "apple2", time: Date(),picture_id:"pic6"}
+]);
+
+db.secretGroup.insertOne(
+{ _id: "group1",constructor:"id1",manager:"id2",participant_id:["par1","par2","par3"]});       
+
+
+db.participant.insertMany(
+[
+{ _id: "par1",nickNm: "nickNm3", picture_id:"pic3",users_id:"id3"},
+{ _id: "par2",nickNm: "nickNm4", picture_id:"pic4",users_id:"id4"},
+{ _id: "par3",nickNm: "nickNm5", picture_id:"pic5",users_id:"id5"}
+]);
